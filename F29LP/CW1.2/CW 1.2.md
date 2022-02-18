@@ -1,18 +1,23 @@
 # Yoav Levi - H00347035
+
 ## Language processing cw 1.2, grammar and parse trees.
-Notes: 
+
+Notes:
+
 * For every grammar, $S$ is the start symbol.
 * $T$ is the set of terminals in every grammar.
 * $N$ is the set of non-terminals in every grammar.
 
 ### 1. $/a*b*/$
+
 $$
 \begin{gather*}
 	\{a^nb^m|n,m\in
 	\mathbb{N}\}
 \end{gather*}
 $$
-### 2. 
+
+### 2.
 
 $$
 \begin{gather*}
@@ -22,13 +27,17 @@ $$
 	A \rightarrow b A| \epsilon
 \end{gather*}
 $$
+
 ### 3. $/(ab)*/$
+
 $$
 \begin{gather*}
 	\{(ab)^n|n\in\mathbb{N}\}
 \end{gather*}
 $$
+
 ### 4.
+
 $$
 \begin{gather*}\\
 	N = \{S,A\},\,
@@ -37,13 +46,17 @@ $$
 	A\rightarrow bA
 \end{gather*}
 $$
+
 ### 5.$/Whiske?y/$
+
 $$
 \begin{gather*}
 	\{W^nh^ni^ns^nk^ne^my^n |n=1|m\leq1|m\geq0\}
 \end{gather*}
 $$
+
 ### 6.
+
 $$
 \begin{gather*}
 	N = \{S,B,C,D,E,F,G\}\,,
@@ -58,7 +71,9 @@ $$
 	G \rightarrow y
 \end{gather*}
 $$
+
 ### 7.
+
 $$
 \begin{gather*}
 	N = \{S,B,C\},\,
@@ -77,6 +92,7 @@ $$
 </div>
 
 ### 8.  $\{ aⁿ bⁿ | n ∈ ℕ\} \text{ - Context free}$
+
 $$
 \begin{gather*}
 	N = \{S\},\,
@@ -85,7 +101,9 @@ S \rightarrow aSb\\\
 S \rightarrow \epsilon
 \end{gather*}
 $$
-### 9. 
+
+### 9.
+
 $$
 \begin{gather*}\\
 	N = \{S\},\,
@@ -93,8 +111,11 @@ $$
 \tiny\text{Notice: "(" and ")" are terminal}\\
 S \rightarrow (\, S \,)\\
 S \rightarrow 0
-\end{gather*}$$
+\end{gather*}
+$$
+
 ### 10.
+
 $$
 \begin{gather*}
 	N = \{S,A,D,B,E\},\,
@@ -107,7 +128,9 @@ $$
 	E \to + | *
 \end{gather*}
 $$
+
 ### 11. $\text{palindromes with \{a,b\}}$
+
 $$
 \begin{gather*}
 	N = \{S\},\,
@@ -117,7 +140,9 @@ $$
 	S \to \epsilon
 \end{gather*}
 $$
+
 ### 12. $\text{parity seq}$
+
 $$
 \begin{gather*}
 	N = \{S,A,B\},\,
@@ -127,7 +152,9 @@ $$
 	B \to 0 B | 1 A | \epsilon
 \end{gather*}
 $$
+
 ### 13. $\text{numbers divsable by 4.}$
+
 $$
 \begin{gather*}
 	N = \{S,A,B,C\},\,
@@ -139,7 +166,9 @@ $$
 	E → 0 | 0E
 \end{gather*}
 $$
+
 ### 16.
+
 $$
 \begin{gather*}
 1.\text{ none}\\
@@ -154,14 +183,18 @@ $$
 </div>
 
 ### 17.
+
 $$
 \begin{gather*}
 X\to Xa\text{ is not an object language, it's part of the meta language }\\
 \text{as X is a non terminal and therefore not part of the object language.}
 \end{gather*}
 $$
+
 ### 18.
+
 1.$(ab|ba)*$
+
 $$
 \begin{gather*}
 	N = \{S\},\,
@@ -169,7 +202,9 @@ $$
 	S\to abS | baS|\epsilon
 \end{gather*}
 $$
+
 2.$\{(ab)^n a^n| n≥1\}$
+
 $$
 \begin{gather*}
 	N = \{S,A\},\,
@@ -178,7 +213,7 @@ $$
 	A \to aS |a
 \end{gather*}
 $$
-3.
+
 $$
 \begin{gather*}
 	N = \{S\},\,
@@ -188,7 +223,7 @@ $$
 	S \to \epsilon
 \end{gather*}
 $$
-4.
+
 $$
 \begin{gather*}\\
 	N = \{S,A\},\,
@@ -197,7 +232,7 @@ $$
 	A \to a A | \epsilon
 \end{gather*}
 $$
-5.
+
 $$
 \begin{gather*}
 	N = \{S\},\,
@@ -205,36 +240,42 @@ $$
 	S \to a S b | a S b b | \epsilon
 \end{gather*}
 $$
+
 ### 20.
+
 1.Is ambiguous as there are two or more different ways to parse the sentence "aaabaaa"
 
-| Step | Application  | Outcome       | Production Rule |
-| ---- | ------------ | ------------ | --------------- |
-| 1    | **S**        | **aSbSa**    | S → aSbSa       |
-| 2    | a**S**bSa    | a**aSa**bSa  | S → aSa         |
-| 3    | aa**S**abSa  | abSa         | S → ɛ           |
-| 4    | aaab**S**a   | aaab**aSa**a | S → aSa         |
-| 5    | aaaba**S**aa | aaabaaa      | S → ɛ           |
+| Step | Application        | Outcome            | Production Rule |
+| ---- | ------------------ | ------------------ | --------------- |
+| 1    | **S**        | **aSbSa**    | S → aSbSa      |
+| 2    | a**S**bSa    | a**aSa**bSa  | S → aSa        |
+| 3    | aa**S**abSa  | abSa               | S → ɛ         |
+| 4    | aaab**S**a   | aaab**aSa**a | S → aSa        |
+| 5    | aaaba**S**aa | aaabaaa            | S → ɛ         |
 
 and
 
-| Step | Application  | Outcome       | Production Rule |
-| ---- | ------------ | ------------ | --------------- |
-| 1    | **S**        | **aSa**    | S → aSa       |
-| 2    | a**S**a    | a**aSa**a  | S → aSa         |
-| 3    | aa**S**aa  | aa**aSbSa**aa         | S → aSbSa           |
-| 4    | aaa**S**bSaaa   | aaabSaaa | S → ɛ         |
-| 5    | aaab**S**aaa | aaabaaa      | S → ɛ           |
+| Step | Application         | Outcome             | Production Rule |
+| ---- | ------------------- | ------------------- | --------------- |
+| 1    | **S**         | **aSa**       | S → aSa        |
+| 2    | a**S**a       | a**aSa**a     | S → aSa        |
+| 3    | aa**S**aa     | aa**aSbSa**aa | S → aSbSa      |
+| 4    | aaa**S**bSaaa | aaabSaaa            | S → ɛ         |
+| 5    | aaab**S**aaa  | aaabaaa             | S → ɛ         |
 
 2.The problem of finding ambiguousy is unsolved, meaning no one can compute ambiguousy, meaning this grammar with these production rules can very possibly be ambiguous, but we simply do not have a straight answer.
+
 ### 23.
+
 Consider the following grammar:
+
 $$
 \begin{gather*}
 〈exp〉 ::= 〈digit〉|〈exp〉∗〈digit〉|〈digit〉+〈exp〉\\
 〈digit〉 ::= 2 |3 |4
 \end{gather*}
 $$
+
 With the following parse trees:
 ![[Pasted image 20220210142446.png]]
 Both parse trees accept and present the string $2+3*4$ however, they will be evaluated
