@@ -9,22 +9,29 @@
 \usepackage{enumitem}
 \usepackage{varwidth}
 \usepackage{tasks}
+\usepackage[T1]{fontenc}
 
 \usetikzlibrary{automata, positioning}
 
-\title{%
-  Automata. \\
-  \large CW 1.3, F29LP}
-\author{%
-Yoav Levi\\
-\small H00347035
-} % Sets authors name
-\date{}
-
+\newlength{\drop}
 % The preamble ends with the command \begin{document}
 \begin{document} % All begin commands must be paired with an end command somewhere
-    \maketitle % creates title using information in preamble (title, author, date)
-    \newpage
+    \begin{titlepage}
+        \drop=0.1\textheight
+        \centering
+        \vspace*{\baselineskip}
+        {\LARGE Automata}\\[0.2\baselineskip]
+        \rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
+        \rule{\textwidth}{1.6pt}\\[\baselineskip]
+        \scshape
+        Course Work 1.3\\
+        F29LP\par
+        \vfill
+        Submitted by \\[\baselineskip]
+        {\Large Yoav Levi\par}
+        {\itshape H00347035\par}
+        \vspace*{8\baselineskip}
+    \end{titlepage}
 
     \section{/$(ab)*$/} % creates a section
     \section{/$(b*a)+a+b[ab]*$/}
