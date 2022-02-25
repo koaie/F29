@@ -202,5 +202,79 @@
             \end{center}
         \end{enumerate}
     \section{ The CFG is used to create a number of a's with an equivalent number of b's, in any order.}
+    \section{$L=\{a^mb^na^m|m,n \geq 0\}$, alphabet = $\{a,b,Z_0\}$, Start stack symbol = $Z_0$}
+        \begin{tikzpicture} [draw=cyan!70!black,
+            node distance = 2cm, 
+            on grid, 
+            auto]
+        
+            % State q0 
+            \node (se) [state, 
+                initial, 
+                initial text = {}] {$S_{e}$};
 
+            % State q1    
+            \node (sa0) [state,
+                right = of se] {$S_{a0}$};
+
+            % State q2    
+            \node (sb) [state,
+                right = of sa0] {$S_b$};
+
+            % State q1    
+            \node (sa1) [state,
+                right = of sb] {$S_{a1}$};
+
+            \node (sf) [state,
+            accepting,
+            right = of sa1] {$S_f$};
+
+            % Arrows
+            \path [-stealth, thick]
+                (se) edge[bend left] node {$\epsilon,\epsilon,Z_0$}   (sa0)
+                (sa0) edge[bend left] node {$b,\epsilon,\epsilon$}   (sb)
+                (sb) edge[bend left] node {$a,a,\epsilon$}   (sa1)
+                (sa1) edge[bend left] node {$\epsilon,Z_0,\epsilon$}   (sf)
+
+                (sa0) edge [loop above]  node {$a,\epsilon,a$}()
+                (sb) edge [loop above]  node {$b,\epsilon,\epsilon$}()
+                (sa1) edge [loop above]  node {$a,a,\epsilon$}();
+        \end{tikzpicture}
+    \section{Not possible as DFA express regular languages, and $a^m b^n a^m$ is a only expressable as a context-free language.}
+    \section{}
+    \section{}
+    \section{$L=\{w|\#_a = \#_b\}$, alphabet = $\{a,b,Z_0\}$, Start stack symbol = $Z_0$}
+        \begin{tikzpicture} [draw=cyan!70!black,
+        node distance = 2cm, 
+        on grid, 
+        auto]
+    
+        % State q0 
+        \node (se) [state, 
+            initial, 
+            initial text = {}] {$S_{e}$};
+
+        % State q1    
+        \node (sa) [state,
+            right = of se] {$S_{a}$};
+
+        % State q2    
+        \node (sb) [state,
+            right = of sa] {$S_b$};
+
+        \node (sf) [state,
+        accepting,
+        right = of sb] {$S_f$};
+
+        % Arrows
+        \path [-stealth, thick]
+            (se) edge[bend left] node {$\epsilon,\epsilon,Z_0$}   (sa)
+            (sa) edge[bend left] node {$b,a,\epsilon$}   (sb)
+            (sb) edge[bend left] node {$\epsilon,Z_0,\epsilon$}   (sf)
+
+            (sa) edge [loop above]  node {$a,\epsilon,a$}()
+            (sb) edge [loop above]  node {$b,a,\epsilon$}();
+    \end{tikzpicture}
+    \section{}
+    \section{}
 \end{document} % This is the end of the document
