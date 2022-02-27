@@ -240,7 +240,7 @@
                 (sb) edge [loop above]  node {$b,\epsilon,\epsilon$}()
                 (sa1) edge [loop above]  node {$a,a,\epsilon$}();
         \end{tikzpicture}
-    \section{Not possible as DFA express regular languages, and $a^m b^n a^m$ is a only expressable as a context-free language.}
+    \section{Not possible as DFA express regular languages, and $a^m b^n a^m$ is a only expressible as a context-free language.}
     \section{L=$\{a^m b^{2n}|m,n \geq 0\}$}
         \begin{tikzpicture} [draw=cyan!70!black,
             node distance = 3.5cm, 
@@ -262,20 +262,57 @@
 
             % State q1    
             \node (sf) [state,
-                below = of sb] {$S_{f}$};
+                right = of sb] {$S_{f}$};
 
             % Arrows
             \path [-stealth, thick]
                 (se) edge[bend left] node {$\epsilon,\epsilon,Z_0$}   (sa)
                 (sa) edge[bend left] node {$b,\epsilon,b$}   (sb)
-                (sa) edge[bend right] node {$\epsilon,\epsilon,\epsilon$}   (sf)
+                (sa) edge[bend right] node {$\epsilon,\epsilon,\epsilon$}   (sb)
                 (sb) edge[bend left] node {$b,\epsilon,b$}   (sa)
                 (sb) edge[bend left] node {$\epsilon,Z_0,\epsilon$}   (sf)
 
                 (sa) edge [loop above]  node {$a,\epsilon,\epsilon$}()
                 ;
         \end{tikzpicture}
-    \section{}
+    \section{L=$\{a^mb^n|m>n>0\}$}
+        \begin{tikzpicture} [draw=cyan!70!black,
+            node distance = 2cm, 
+            on grid, 
+            auto]
+        
+            % State q0 
+            \node (q0) [state, 
+                initial, 
+                initial text = {}] {$Q_0$};
+
+            % State q1    
+            \node (q1) [state,
+                right = of q0] {$Q_1$};
+
+            % State q2    
+            \node (q2) [state,
+                right = of q1] {$Q_2$};
+
+            % State q1    
+            \node (q3) [state,
+                right = of q2] {$Q_3$};
+
+            \node (q4) [state,
+            accepting,
+            right = of q3] {$Q_4$};
+
+            % Arrows
+            \path [-stealth, thick]
+                (q0) edge[bend left] node {$\epsilon,\epsilon,Z_0$}   (q1)
+                (q1) edge[bend left] node {$b,a,\epsilon$}   (q2)
+                (q2) edge[bend left] node {$\epsilon,a,\epsilon$}   (q3)
+                (q3) edge[bend left] node {$\epsilon,Z_0,\epsilon$}   (q4)
+
+                (q1) edge [loop above]  node {$a,\epsilon,a$}()
+                (q2) edge [loop above]  node {$b,a,\epsilon$}()
+                (q3) edge [loop above]  node {$\epsilon,a,\epsilon$}();
+        \end{tikzpicture}
     \section{$L=\{w|\#_a = \#_b\}$}
         \begin{tikzpicture} [draw=cyan!70!black,
             node distance = 4cm, 
