@@ -128,37 +128,42 @@
             
             % State q0 
             \node (q0) [state, 
-                initial,  
+                initial,
+                accepting,
                 initial text = {}] {$q_0$};
             
             % State q1    
             \node (q1) [state, 
+                accepting,
                 above right = of q0] {$q_1$};
             
             % State q2    
             \node (q2) [state,
-                accepting,
                 right = of q1] {$q_2$};
             
             
             % State q1    
-            \node (q3) [state, 
+            \node (q3) [state,
+                accepting,
                 below right = of q0] {$q_3$};
             
             % State q2    
             \node (q4) [state,
-                accepting,
                 right = of q3] {$q_4$};
             
             % Arrows
             \path [-stealth, thick]
                 (q0) edge [left] node {$a$} (q1)
                 (q0) edge [left] node {$b$} (q3)
-                (q1) edge [bend left] node {$a$} (q2)
-                (q3) edge [bend left] node {$b$} (q4)
+                (q1) edge [bend left] node {$\epsilon$} (q2)
+                (q2) edge [bend left] node {$a$} (q1)
+                (q3) edge [bend left] node {$\epsilon$} (q4)
+                (q4) edge [bend left] node {$b$} (q3)
             
-                (q1) edge [loop above]  node {$a,b$}()
-                (q3) edge [loop above]  node {$a,b$}()
+                (q1) edge [loop above]  node {$a$}()
+                (q2) edge [loop above]  node {$b$}()
+                (q3) edge [loop above]  node {$b$}()
+                (q4) edge [loop above]  node {$a$}()
                 ;
             \end{tikzpicture}
     \end{enumerate}
