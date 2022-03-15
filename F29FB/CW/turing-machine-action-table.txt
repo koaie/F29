@@ -1,14 +1,5 @@
 # H00347035
 #
-# This TM erases the first unary number on the tape and puts a 1 in the
-# space that was after that number.
-#
-# This TM computes the function f ∈ N 7 → N such that
-# f(x) = 1 for all x ∈ N.
-#
-# This TM also computes the function g ∈ N2 7 → N such that
-# g(x, y) = 1 + y for all x, y ∈ N.
-#
 {
 ((q_0, ^), (q_0, ^, R)),
 ((q_0, 1), (q_1, 1, L)),
