@@ -28,7 +28,10 @@
 ((q_6, ^),(q_0, ^, R)),
 
 # Move and set new starting point
-
+((q_7, 1), (q_7, 1, L)),
+((q_7, ^), (q_8, ^, L)),
+((q_8, 1), (q_8, 1, L)),
+((q_8, ^), (q_9, ^, R)),
 
 # Start mod/div TM
 #((q_0, 1), (q_1, ^, R)),
