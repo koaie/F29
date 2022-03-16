@@ -120,11 +120,11 @@
                                 
         % State q19    
         \node (q19) [state,
-        below left = 4cm of q18] {$q_{19}$};  
+        below = 5cm of q18] {$q_{19}$};  
                                           
         % State q20    
         \node (q20) [state,
-        below right = 4cm of q18] {$q_{20}$};  
+        below right = 5cm of q18] {$q_{20}$};  
                                                     
         % State q21    
         \node (q21) [state,
@@ -179,7 +179,7 @@
             (q16) edge [bend left] node {$\land,\land,L$} (q17)
             (q17) edge [bend right] node {$\land,\land,R$} (q10)
             (q18) edge [bend left=50] node {$A,1,R$} (q20)
-            (q18) edge [bend right=50] node {$\land,\land,L$} (q19)
+            (q18) edge [bend right=40] node {$\land,\land,L$} (q19)
             (q19) edge [bend right=0] node {$\land,\land,0$} (qf)
             (q20) edge [bend left] node {$B,\land,R$} (q21)
             (q20) edge [bend right=60] node {$B,\land,R$} (q23)
