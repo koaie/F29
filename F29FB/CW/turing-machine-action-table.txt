@@ -2,9 +2,13 @@
 #
 {
 # Move to the right
-((q_0, 1), (q_0, 1, R)),
-((q_0, ^), (q_1, ^, R)),
+((q_0, 1), (q_30, 1, R)),
+((q_0, ^), (q_f, X, 0)),
 ((q_1, 1), (q_1, 1, R)),
+
+
+((q_30, 1), (q_30, 1, R)),
+((q_30, ^), (q_1, ^, R)),
 
 # Once rightmost go once to the left
 ((q_1, ^), (q_2, ^, L)),
@@ -25,7 +29,7 @@
 
 # Go back to starting pos and repeat
 ((q_6, 1),(q_6, 1, R)),
-((q_6, ^),(q_0, ^, R)),
+((q_6, ^),(q_30, ^, R)),
 
 # Move and set new starting point
 ((q_7, 1), (q_7, 1, L)),
