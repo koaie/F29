@@ -177,7 +177,7 @@
             (q14) edge [bend left=65] node {$1,1,L$} (q16)
             (q15) edge [bend left] node {$\land,B,L$} (q16)
             (q16) edge [bend left] node {$\land,\land,L$} (q17)
-            (q17) edge [bend right] node {$\land,\land,L$} (q10)
+            (q17) edge [bend right] node {$\land,\land,R$} (q10)
             (q18) edge [bend left=50] node {$A,1,R$} (q20)
             (q18) edge [bend right=50] node {$\land,\land,L$} (q19)
             (q19) edge [bend right=0] node {$\land,\land,0$} (qf)
@@ -203,6 +203,7 @@
             (q20) edge [loop below]  node {$A,1,R$}()
             (q21) edge [loop above]  node {$B,1,R$}()
             (q22) edge [loop above]  node {$1,1,L$}()
+            (q23) edge [loop above]  node {$1,1,L$}()
             ;
         \end{tikzpicture}
 \end{document} % This is the end of the document
