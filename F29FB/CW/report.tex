@@ -45,6 +45,10 @@
             initial,  
             initial text = {Initial State}] {$q_0$};
 
+        % State q30    
+        \node (q30) [state,
+            above = 2.5cm of q0] {$q_{30}$};
+
         % State q1    
         \node (q1) [state,
             right = of q0] {$q_1$};
@@ -141,10 +145,15 @@
         % State q2f    
         \node (qf) [state, diamond, accepting,
             below = 3cm of q20] {$q_{f}$}; 
+
+        % State q2f2    
+        \node (qf2) [state, diamond, accepting,
+            above left = 3.5cm of q0] {$q_{f}$}; 
         % Arrows
         \path [-stealth, thick]
             % Copying machine && Formatting
-            (q0) edge [bend left] node {$\land,\land,R$} (q1)
+            (q0) edge [bend right=0] node {$\land,H,R$} (qf2)
+            (q0) edge [bend right=20] node {$1,1,R$} (q30)
             (q1) edge [bend left] node {$\land,\land,L$} (q2)
             (q2) edge [bend left] node {$1,\land,L$} (q3)
             (q2) edge [bend left] node {$\land,\land,L$} (q7)
@@ -156,8 +165,8 @@
             (q8) edge [bend left] node {$\land,\land,R$} (q9)
             (q9) edge [bend left] node {$1,1,0$} (q10)
             (q9) edge [bend right] node {$\land,\land,R$} (q10)
+            (q30) edge [bend left=5] node {$\land,\land,R$} (q1)
 
-            (q0) edge [loop above]  node {$1,1,R$}()
             (q1) edge [loop above]  node {$1,1,R$}()
             (q3) edge [loop above]  node {$1,1,L$}()
             (q4) edge [loop above]  node {$1,1,L$}()
@@ -165,6 +174,7 @@
             (q6) edge [loop below]  node {$1,1,R$}()
             (q7) edge [loop above]  node {$1,1,L$}()
             (q8) edge [loop below]  node {$1,1,L$}()
+            (q30) edge [loop above]  node {$1,1,R$}()
 
             % TM
             (q10) edge [bend left] node {$1,\land,R$} (q11)
@@ -275,7 +285,7 @@
             \end{tasks}
             \end{varwidth}
         \end{center}
-    \section{Input 3, 5}
+    \section{Input (3, 5)}
     $s_0 \equiv \land, s_1 \equiv 1, s_2 \equiv A, s_3 \equiv B$\\
         \begin{center}
             \begin{varwidth}{\textwidth}
