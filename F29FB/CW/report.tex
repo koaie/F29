@@ -80,7 +80,7 @@
             
         % State q8    
         \node (q8) [state,
-            below = 2.5cm and of q7] {$q_8$};    
+            below left= 2.5cm and of q7] {$q_8$};    
             
         % State q9    
         \node (q9) [state,
@@ -157,11 +157,11 @@
             (q0) edge [bend right=20] node {$1,1,R$} (q30)
             (q1) edge [bend left] node {$\land,\land,L$} (q2)
             (q2) edge [bend left] node {$1,\land,L$} (q3)
-            (q2) edge [bend left] node {$\land,\land,L$} (q7)
+            (q2) edge [bend left=-15] node {$\land,\land,L$} (q7)
             (q3) edge [bend left] node {$\land,\land,L$} (q4)
             (q4) edge [bend left] node {$\land,\land,L$} (q5)
             (q5) edge [bend left] node {$\land,1,R$} (q6)
-            (q6) edge [bend left=45] node {$\land,\land,R$} (q0)
+            (q6) edge [bend left=45] node {$\land,\land,R$} (q30)
             (q7) edge [bend right=45] node {$\land,\land,L$} (q8)
             (q8) edge [bend left] node {$\land,\land,R$} (q9)
             (q9) edge [bend left] node {$1,1,0$} (q10)
@@ -300,7 +300,7 @@
             $q_{30}$: $\land\land\land$111$@\land$11111$\land\land\land$ 
 
             \task
-            Check if there is a unary input (non blank!).
+            Check if there is a dividend (any 1 ,unary input).
         \end{tasks}
         \end{varwidth}
     \end{center}
