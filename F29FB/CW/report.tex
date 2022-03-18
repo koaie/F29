@@ -10,6 +10,7 @@
 \usepackage{enumitem}
 \usepackage{varwidth}
 \usepackage{tasks}
+\usepackage{amssymb}
 \usepackage[T1]{fontenc}
 
 \usetikzlibrary{automata, positioning}
@@ -288,15 +289,19 @@
             \end{varwidth}
         \end{center}
     \section{Input (3, 5)}
-    A
-        \begin{center}
-            \begin{varwidth}{\textwidth}
-            \begin{tasks}[label={(\roman*)},label-width={1cm}] (2)
-                \task
+    \begin{center}
+        \begin{varwidth}{\textwidth}
+        \begin{tasks}[label={(\roman*)}] (2)
+            \task
+            The TM starts by checking if the head starts at a $\land$ (blank) then the divisor is 0 and the ticket is invalidated and the TM halts.\\ Otherwise the divisor is a natural number and the TM goes to the rightmost of the divisor until we reach a blank.\\\\
+            $q_0$: $\;\land\land\land$@111$\land$11111$\land\land\land$\\
+            $q_{30}$: $\land\land\land$1@11$\land$11111$\land\land\land$\\
+            $q_{30}$: $\land\land\land$11@1$\land$11111$\land\land\land$\\
+            $q_{30}$: $\land\land\land$111$@\land$11111$\land\land\land$ 
 
-                \task
-
-            \end{tasks}
-            \end{varwidth}
-        \end{center}
+            \task
+            Check if there is a unary input (non blank!).
+        \end{tasks}
+        \end{varwidth}
+    \end{center}
 \end{document} % This is the end of the document
