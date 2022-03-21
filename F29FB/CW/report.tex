@@ -2,7 +2,7 @@
 
 % This is a simple sample document.  For more complicated documents take a look in the exercise tab. Note that everything that comes after a % symbol is treated as comment and ignored when the code is compiled.
 
-\documentclass{article} % \documentclass{} is the first command in any LaTeX code.  It is used to define what kind of document you are creating such as an article or a book, and begins the document preamble
+\documentclass[a4paper]{article} % \documentclass{} is the first command in any LaTeX code.  It is used to define what kind of document you are creating such as an article or a book, and begins the document preamble
 
 \usepackage{amsmath} % \usepackage is a command that allows you to add functionality to your LaTeX code
 \usepackage{tikz}
@@ -292,14 +292,17 @@
         \begin{varwidth}{\textwidth}
         \begin{tasks}[label={(\roman*)},label-width={0.5cm}] (2)
             \task
-            The TM starts by checking if the head starts at a $\land$ (blank) then the divisor is 0 and the ticket is invalidated and the TM halts.\\ Otherwise the divisor is a natural number and the TM goes to the rightmost of the divisor until we reach a blank.\\\\
-            $q_0$: $\;\land\land\land$@111$\land$11111$\land\land\land$\\
+            The TM starts by checking if the head starts at a $\land$ (blank) then the divisor is 0 and the ticket is invalidated and the TM halts.
+            Otherwise the divisor is a natural number and goes to the next state.\\\\
+            $q_0$: $\;\land\land\land$@111$\land$11111$\land\land\land$
+            \task
+            Go to the rightmost of the unary until we reach a blank.\\\\
             $q_{30}$: $\land\land\land$1@11$\land$11111$\land\land\land$\\
             $q_{30}$: $\land\land\land$11@1$\land$11111$\land\land\land$\\
             $q_{30}$: $\land\land\land$111$@\land$11111$\land\land\land$ 
 
             \task
-            Check if there is a dividend (any 1 ,unary input) and go to the rightmost, Otherwise ( if blank, $\land$) then go to DIV/MOD part of TM.\\\\
+            Check if there is a unary and go to the rightmost of the said unary. Otherwise ( if blank, $\land$) then go to DIV/MOD part of TM.\\\\
             $q_1$: $\land\land\land$111$\land$@11111$\land\land\land$\\
             $q_1$: $\land\land\land$111$\land$1@1111$\land\land\land$\\
             $q_1$: $\land\land\land$111$\land$11@111$\land\land\land$\\
@@ -308,7 +311,33 @@
             $q_1$: $\land\land\land$111$\land$11111@$\land\land\land$
 
             \task
-            a
+            Once at the rightmost of the unary and check if there is a unary number, move it to the leftmost of the divisor and go back to (ii). Otherwise (if blank) copying is done and go to the leftmost of the divisor then starts the mod/div operation. \\\\
+            $q_2$: $\land\land\land$111$\land$1111@1$\land\land\land$\\
+            $q_3$: $\land\land\land$111$\land$111@1$\land\land\land$\\
+            $q_3$: $\land\land\land$111$\land$11@11$\land\land\land$\\
+            $q_3$: $\land\land\land$111$\land$1@111$\land\land\land$\\
+            $q_3$: $\land\land\land$111$\land$@1111$\land\land\land$\\
+            $q_3$: $\land\land\land$111@$\land$1111$\land\land\land$\\
+            $q_4$: $\land\land\land$11@1$\land$1111$\land\land\land$\\
+            $q_4$: $\land\land\land$1@11$\land$1111$\land\land\land$\\
+            $q_4$: $\land\land\land$@111$\land$1111$\land\land\land$\\
+            $q_4$: $\land\land$@$\land$111$\land$1111$\land\land\land$\\
+            $q_5$: $\land$@$\land\land$111$\land$1111$\land\land\land$\\
+            $q_6$: $\land$1@$\land$111$\land$1111$\land\land\land$
+
+            \task Once copying is done(determined by iv.), then go to the leftmost of the divisor and start mod/div operation.\\\\\
+            $q_2$: $\land\land$1 1 1 1 1 $\land$ 1 1 1@$\land\land\land$\\
+            $q_7$: $\land\land$1 1 1 1 1 $\land$ 1 1@1 $\land\land\land$\\
+            $q_7$: $\land\land$1 1 1 1 1 $\land$ 1@1 1 $\land\land\land$\\
+            $q_7$: $\land\land$1 1 1 1 1 $\land$@1 1 1 $\land\land\land$\\
+            $q_7$: $\land\land$1 1 1 1 1@$\land$ 1 1 1 $\land\land\land$\\
+            $q_8$: $\land\land$1 1 1 1@1 $\land$ 1 1 1 $\land\land\land$\\
+            $q_8$: $\land\land$1 1 1@1 1 $\land$ 1 1 1 $\land\land\land$\\
+            $q_8$: $\land\land$1 1@1 1 1 $\land$ 1 1 1 $\land\land\land$\\
+            $q_8$: $\land\land$1@1 1 1 1 $\land$ 1 1 1 $\land\land\land$\\
+            $q_8$: $\land\land$@1 1 1 1 1$\land$ 1 1 1 $\land\land\land$\\
+            $q_8$: $\land$@$\land$ 1 1 1 1 1 $\land$ 1 1 1 $\land\land\land$\\
+            $q_9$: $\land\land$@1 1 1 1 1 $\land$ 1 1 1 $\land\land\land$
         \end{tasks}
         \end{varwidth}
     \end{center}

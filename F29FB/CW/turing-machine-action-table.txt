@@ -14,7 +14,7 @@
 # Once rightmost go once to the left
 ((q_1, ^), (q_2, ^, L)),
 
-# Start mod/div, otherwise remove the rightmost unary.
+# Start mod/div, otherwise move the rightmost unary.
 ((q_2, ^), (q_7,^,L)),
 ((q_2, 1), (q_3, ^, L)),
 
