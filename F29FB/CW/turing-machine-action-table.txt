@@ -41,8 +41,11 @@
 ((q_9, ^), (q_10, ^, R)),
 
 # Start mod/div TM
-#  Go to the right
+
+# Subtract 1 from the dividend
 ((q_10, 1), (q_11, ^, R)),
+
+#  Go to the right
 ((q_10, ^), (q_18, ^, R)),
 ((q_11, 1), (q_11, 1, R)),
 ((q_11, ^), (q_12, ^, R)),
@@ -55,7 +58,7 @@
 ((q_13, ^), (q_13, ^, L)),
 ((q_13, A), (q_13, A, L)),
 
-# Replace leftmost unary divisor with A
+# Replace leftmost unary divisor with A (unary reminder)
 ((q_13, 1), (q_14, A, L)),
 
 

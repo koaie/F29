@@ -1,10 +1,10 @@
 
 
-% This is a simple sample document.  For more complicated documents take a look in the exercise tab. Note that everything that comes after a % symbol is treated as comment and ignored when the code is compiled.
+% This isAsimple sample document.  For more complicated documents takeAlook in the exercise tab. Note that everything that comes afterA% symbol is treated as comment and ignored when the code is compiled.
 
-\documentclass[a4paper]{article} % \documentclass{} is the first command in any LaTeX code.  It is used to define what kind of document you are creating such as an article or a book, and begins the document preamble
+\documentclass[a4paper]{article} % \documentclass{} is the first command in any LaTeX code.  It is used to define what kind of document you are creating such as an article orAbook, and begins the document preamble
 
-\usepackage{amsmath} % \usepackage is a command that allows you to add functionality to your LaTeX code
+\usepackage{amsmath} % \usepackage isAcommand that allows you to add functionality to your LaTeX code
 \usepackage{tikz}
 \usetikzlibrary{shapes,snakes}
 \usepackage{enumitem}
@@ -34,7 +34,7 @@
         \vspace*{8\baselineskip}
     \end{titlepage}
 
-    \section{Graph} % creates a section
+    \section{Graph} % createsAsection
         \begin{tikzpicture} [draw=cyan!45!black,
             node distance = 2cm, 
             on grid, 
@@ -49,7 +49,7 @@
         \node (q30) [state,
             above = 2.5cm of q0] {$q_{30}$};
 
-        % State q1    
+        % State q1  
         \node (q1) [state,
             right = of q0] {$q_1$};
 
@@ -90,7 +90,7 @@
             right = 2.5cm of q9] {$q_{10}$};  
               
             
-        % State q11    
+        % State q11  
         \node (q11) [state,
             right = of q10] {$q_{11}$};  
                     
@@ -130,7 +130,7 @@
         \node (q20) [state,
         below right = 5cm of q18] {$q_{20}$};  
                                                     
-        % State q21    
+        % State q21  
         \node (q21) [state,
         right = of q20] {$q_{21}$};  
                                                     
@@ -217,7 +217,7 @@
             ;
         \end{tikzpicture}
         \section{Mathematical Notation}
-        $s_0 \equiv \land, s_1 \equiv 1, s_2 \equiv A, s_3 \equiv B, s_4 \equiv H$\\
+        $s_0 \equiv \land, s_1\equiv1, s_2 \equiv A, s_3 \equiv B, s_4 \equiv H$\\
         \begin{center}
             \begin{varwidth}{\textwidth}
             \begin{tasks}[label={},label-width={1cm}] (2)
@@ -288,21 +288,21 @@
             \end{varwidth}
         \end{center}
     \section{Input (3, 5)}
-    \begin{center}
-        \begin{varwidth}{\textwidth}
-        \begin{tasks}[label={(\roman*)},label-width={0.5cm}] (2)
+        \begin{tasks}[label={(\roman*)},label-width={0.7cm},before-skip = -\parskip , % undo paragraph skip
+            after-skip = -\parskip,
+            after-item-skip = -\parskip] (2)
             \task
-            The TM starts by checking if the head starts at a $\land$ (blank) then the divisor is 0 and the ticket is invalidated and the TM halts.
-            Otherwise the divisor is a natural number and goes to the next state.\\\\
+            The TM starts by checking if the head starts atA$\land$ (blank) then the divisor is 0 and the ticket is invalidated and the TM halts.
+            Otherwise the divisor isAnatural number and goes to the next state.\\\\
             $q_0$: $\;\land\land\land$@111$\land$11111$\land\land\land$
             \task
-            Go to the rightmost of the unary until we reach a blank.\\\\
+            Go to the rightmost of the unary until we reachAblank.\\\\
             $q_{30}$: $\land\land\land$1@11$\land$11111$\land\land\land$\\
             $q_{30}$: $\land\land\land$11@1$\land$11111$\land\land\land$\\
             $q_{30}$: $\land\land\land$111$@\land$11111$\land\land\land$ 
 
             \task
-            Check if there is a unary and go to the rightmost of the said unary. Otherwise ( if blank, $\land$) then go to DIV/MOD part of TM.\\\\
+            Check if there isAunary and go to the rightmost of the said unary. Otherwise ( if blank, $\land$) then go to DIV/MOD part of TM.\\\\
             $q_1$: $\land\land\land$111$\land$@11111$\land\land\land$\\
             $q_1$: $\land\land\land$111$\land$1@1111$\land\land\land$\\
             $q_1$: $\land\land\land$111$\land$11@111$\land\land\land$\\
@@ -311,7 +311,7 @@
             $q_1$: $\land\land\land$111$\land$11111@$\land\land\land$
 
             \task
-            Once at the rightmost of the unary and check if there is a unary number, move it to the leftmost of the divisor and go back to (ii). Otherwise (if blank) copying is done and go to the leftmost of the divisor then starts the mod/div operation. \\\\
+            Once at the rightmost of the unary and check if there isAunary number, move it to the leftmost of the divisor and go back to (ii). Otherwise (if blank) copying is done and go to the leftmost of the divisor then starts the mod/div operation. \\\\
             $q_2$: $\land\land\land$111$\land$1111@1$\land\land\land$\\
             $q_3$: $\land\land\land$111$\land$111@1$\land\land\land$\\
             $q_3$: $\land\land\land$111$\land$11@11$\land\land\land$\\
@@ -325,7 +325,7 @@
             $q_5$: $\land$@$\land\land$111$\land$1111$\land\land\land$\\
             $q_6$: $\land$1@$\land$111$\land$1111$\land\land\land$
 
-            \task Once copying is done(determined by iv.), then go to the leftmost of the divisor and start mod/div operation.\\\\\
+            \task Once copying is done(determined by iv.), then go to the leftmost of the divisor and start mod/div operation.\\\\
             $q_2$: $\land\land$11111$\land$111@$\land\land\land$\\
             $q_7$: $\land\land$11111$\land$11@1$\land\land\land$\\
             $q_7$: $\land\land$11111$\land$1@11$\land\land\land$\\
@@ -338,7 +338,54 @@
             $q_8$: $\land\land$@11111$\land$111$\land\land\land$\\
             $q_8$: $\land$@$\land$11111$\land$111$\land\land\land$\\
             $q_9$: $\land\land$@11111$\land$111$\land\land\land$
+
+            \task
+            Subtract -1 from the leftmost side of the dividend, go to the rightmost side of the divisor and keep track of the subtraction using the character A.\\\\
+            $q_{10}$: $\land\land$@11111$\land$111$\land\land$\\
+            $q_{11}$: $\land\land\land$@1111$\land$111$\land\land$\\
+            $q_{11}$: $\land\land\land$1@111$\land$111$\land\land$\\
+            $q_{11}$: $\land\land\land$11@11$\land$111$\land\land$\\
+            $q_{11}$: $\land\land\land$111@1$\land$111$\land\land$\\
+            $q_{11}$: $\land\land\land$1111@$\land$111$\land\land$\\
+            $q_{12}$: $\land\land\land$1111$\land$@111$\land\land$\\
+            $q_{12}$: $\land\land\land$1111$\land$1@11$\land\land$\\
+            $q_{12}$: $\land\land\land$1111$\land$11@1$\land\land$\\
+            $q_{12}$: $\land\land\land$1111$\land$111@$\land\land$\\
+            $q_{13}$: $\land\land\land$1111$\land$11@1$\land\land$\\
+            $q_{14}$: $\land\land\land$1111$\land$1@1A$\land\land$\\
+            \task
+            Go to the leftmost of the dividend and repeat to (vi) until the divisor is only A.\\\\
+            $q_{16}$: $\land\land\land$1111$\land$@11A$\land\land$\\
+            $q_{16}$: $\land\land\land$1111@$\land$11A$\land\land$\\
+            $q_{17}$: $\land\land\land$111@1$\land$11A$\land\land$\\
+            $q_{17}$: $\land\land\land$11@11$\land$11A$\land\land$\\
+            $q_{17}$: $\land\land\land$1@111$\land$11A$\land\land$\\
+            $q_{17}$: $\land\land\land$@1111$\land$11A$\land\land$\\
+            $q_{17}$: $\land\land$@$\land$1111$\land$11A $\land\land$
+
+            \task
+            Once the divisor is replaced with A's we know it fits once in the dividend, therefore we replace it with1s again and addAB at the rightmost point of the divisor (indicates our quotient)
+            then we go to the leftmost of the dividend and repeat the process (back to vi) until we can no longer subtract.\\\\
+
+            $q_{14}$: $\land\land$11@$\land$AAA$\land\land$\\
+            $q_{15}$: $\land\land$11$\land$@AAA$\land\land$\\ 
+            $q_{15}$: $\land\land$11$\land$1@AA$\land\land$\\
+            $q_{15}$: $\land\land$11$\land$11@A$\land\land$\\ 
+            $q_{15}$: $\land\land$11$\land$111@$\land\land$\\
+            $q_{16}$: $\land\land$11$\land$11@1B$\land\land$\\
+            $q_{16}$: $\land\land$11$\land$1@11B$\land\land$\\
+            $q_{16}$: $\land\land$11$\land$@111B$\land\land$\\
+            $q_{16}$: $\land\land$11@$\land$111B$\land\land$\\
+            $q_{17}$: $\land\land$1@1$\land$111B$\land\land$\\
+            $q_{17}$: $\land\land$@11$\land$111B$\land\land$\\
+            $q_{17}$: $\land$@$\land$11$\land$111B
+
+            \task
+            We then discard of any left over 1s, and convert any As to ones, then we take the leftmost B, turn it into a blank and move it to the rightmost as a 1, while moving to the rightmost we turn any B's to 1s.
+
+            \task
+            We then move the leftmost of the reminder.\\\\End result:
+
+            $q_{f}$: $\land$@1 1 $\land$ 1
         \end{tasks}
-        \end{varwidth}
-    \end{center}
 \end{document} % This is the end of the document
