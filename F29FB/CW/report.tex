@@ -392,9 +392,22 @@
         \section{}
         \begin{tasks}[label={\bfseries\MakeUppercase(\Alph*)},label-width={0.7cm}]
         \task
-        hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi
+        $\text{rmoddiv}(s, d) = (r, q)$ is accomplished by subtracting the dividend ($d$) and keeping track of the subtractions in the divisor, once a divisor is full of subtractions we know it fits in the dividend at least once, this is repeated until it is no longer possible to subtract, giving us the reminder ($r$) and quotient ($q$). Output is then formatted to match the specification of ($r \land q$).
 
         \task
-        hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi hi
+        $\land$ indicates a blank, a blank is used for identifying unarys, and if we are inbeetween unarys, leftmost, and or rightmost of an unary.\\
+        $1$ indicates a natural number in a unary format (i.e. $ 3 \equiv 111$).\\
+        $A$ is used to indicate reminders in a unary format.\\
+        $B$ is used to indicate the quotient in a unary format.
+
+        \task
+        loop $q_{30}\, \text{to}\, q_{6}$ is our copying machines flipping the input $\text{rmoddiv}(s, d)$ to $\text{rmoddiv}(d, s)$, this allows us to think of the problem in a more human natural way (i.e. $\frac{\text{dividend}}{\text{divisor}}$).\\\\
+        loop $q_{10}\, \text{to}\, q_{7}$ is our subtraction and reminder tracker loop, allowing us to to increase our quotient and reminder when appropriate (for reminder with each subtraction, for quotient when the divisor is full of reminders).
+
+        \task
+        This TM implementation fails when the dividend is blank, as there are no checks for such a situation, as a result calculations such as $\text{rmoddiv}(2, 0)$ (i.e. $\frac{0}{2}$) results in 1, as subtractions have no were to increase the reminder and therefore get lost.
+
+        \task
+        It was decided to flip the input in order for the design to make more intuitive sense when coming up with a solution, as $\frac{\text{dividend}}{\text{divisor}}$ is the classical way of expressing division.
         \end{tasks}
 \end{document} % This is the end of the document
